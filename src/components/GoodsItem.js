@@ -1,9 +1,9 @@
 import React from 'react';
 
-function GoodsItem({ id, name, description, price, full_background}) {
+function GoodsItem({ id, name, description, price, full_background, addToBasket}) {
 
     return (
-        <div className="card" id={id}>
+        <div className="card">
             <div className="card-image">
                 <img src={full_background} alt={name}/>
             </div>
@@ -12,7 +12,11 @@ function GoodsItem({ id, name, description, price, full_background}) {
                 <p>{description}</p>
             </div>
             <div className="card-action">
-                <button className='btn'>Купить</button>
+                <button
+                onClick={() => addToBasket({id, name, price})}
+                 className='btn'>
+                     Купить
+                </button>
                 <span className='right'>{price}</span>
             </div>
         </div>

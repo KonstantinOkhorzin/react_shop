@@ -2,7 +2,7 @@ import React from 'react';
 
 import GoodsItem from './GoodsItem';
 
-function GoodsList({goods}) {
+function GoodsList({goods, addToBasket}) {
 
 
     if (!goods.length) {
@@ -11,7 +11,7 @@ function GoodsList({goods}) {
     return (
         <div className='goods'>
             {goods.map(item => {
-                return <GoodsItem key={item.id} {...item}/>
+                return <GoodsItem key={item.id} {...item} addToBasket={addToBasket}/>
             })}
         </div>
     );
